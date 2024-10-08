@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'mysite/css/show.css'%}">
+</head>
+<body>
+    <h1 class="text-center">Объявление</h1>
+    <hr>
+    <div class="but">
+        <button type="submit" class="del"><a href="{% url 'delete' ads.id %}">Удалить</a></button>
+        <button type="submit" class="edit"><a href="{% url 'edit' ads.id %}">Редактировать</a></button>
+    </div>
+    <div class="container">
+        <div class="name">Название объявления</div>
+        <div class="name">{{ads.title}}</div>
+        <div class="text">Текст объявления </div>
+        <div class="text">{{ads.description}}</div>
+        <div class="price">Цена</div>
+        <div class="price">{{ads.price}}</div>
+        <div class="author">Автор</div>
+        <div class="author">{{ads.author}}</div>
+        <div class="data">Дата публикации</div>
+        <div class="data">{{ads.created_at}}</div>
+    </div>
+</body>
+</html>

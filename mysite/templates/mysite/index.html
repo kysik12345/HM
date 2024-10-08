@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'mysite/css/index.css'%}">
+</head>
+<body>
+    <h2 class="text-center">Доска объявлений</h2>
+    <hr>
+    <div><a href="{% url 'about'%}">Контакты</a>
+        <a href="{% url 'add'%}">Создать объявление</a>
+    </div>
+    <table class="table table-bordered">
+        <tr>
+            <td>Объявления</td>
+            <td>Автор</td>
+            <td>Цена</td>
+        </tr>
+        {% for i in page_obj %}
+            <tr>
+                <td><a href="{% url 'show' i.id %}">{{i.title}}</a></td>
+                <td>{{i.author}}</td>
+                <td>{{i.price}}</td>
+            </tr>
+        {% endfor %}
+
+       
+</table>
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+        <a href="?page=1">&laquo;Первая</a>
+        <a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
+        {% endif %}
+
+        <span class="current">
+            Страница{{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+        </span>
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Следующая</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Последняя&raquo;</a>
+        {% endif %}
+    </span>
+</div>
+</body>
+</html>

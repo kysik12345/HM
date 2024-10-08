@@ -1,0 +1,69 @@
+* {
+    background-color: rgb(225, 235, 235);
+}
+h1 {
+    text-align: center;
+    color: rgb(221, 33, 33);
+}
+
+.del{
+    background-color: rgb(240, 115, 115);
+    border-radius: 10px;
+    width: 200px;
+    display: flex;
+    margin: 10px;
+
+}
+
+.new{
+    background-color: rgb(144, 235, 241);
+    border-radius: 10px;
+    display: flex;
+    width: 200px;
+    margin: 10px;
+    
+}
+.del {
+    background-color: rgb(243, 130, 130);
+    border-radius: 5px;
+    width: 100px;
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+.but{
+    display: flex;
+    justify-content: right;
+}
+.name{
+margin: 10px;
+}
+
+.price{
+    margin: 10px;
+
+}
+
+.author{
+
+    margin: 10px;
+}
+
+.text{
+    margin: 10px;
+
+}
+
+.container{
+    margin: 10px;
+    
+}
+body{
+    background-color: rgb(236, 225, 209);
+}
+.data{
+    margin: 10px;
+}
